@@ -14,7 +14,14 @@ export default function Contact() {
     return (
         <React.Fragment>
             <Container id="contact" maxW="container.md" py="8">
-                <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+                <Grid
+                    templateColumns={{
+                        base: "repeat(1, 1fr)",
+                        md: "repeat(2, 1fr)",
+                    }}
+                    textAlign={{ base: "center", md: "start" }}
+                    gap={6}
+                >
                     <GridItem>
                         <Text fontSize="lg">
                             <Icon as={FaPhone} /> Phone: +95 9790647222

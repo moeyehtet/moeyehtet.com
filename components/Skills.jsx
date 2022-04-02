@@ -24,7 +24,13 @@ export default function Skills() {
                 >
                     SKILLS
                 </Heading>
-                <Grid templateColumns="repeat(8, 1fr)" gap={6}>
+                <Grid
+                    templateColumns={{
+                        base: "repeat(2, 1fr)",
+                        md: "repeat(8, 1fr)",
+                    }}
+                    gap={6}
+                >
                     <GridItem>
                         <Box>
                             <Text textAlign="center">

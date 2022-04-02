@@ -17,11 +17,12 @@ export default function About() {
         <React.Fragment>
             <Container id="about-me" maxW="container.md" py="8">
                 <Flex direction="column" align="center">
-                    <Flex align="center" mb="4">
+                    <Box display={{ md: "flex" }} align="center" mb="4">
                         <Image
                             borderRadius="full"
                             boxSize="150px"
-                            mr="8"
+                            mr={{ base: 0, md: 8 }}
+                            mb={{ base: 4, md: 0 }}
                             src="/images/profile-photo.jpg"
                             alt="Moe Ye Htet"
                         />
@@ -33,7 +34,7 @@ export default function About() {
                                 ELECTRICAL ENGINEER
                             </Text>
                         </Box>
-                    </Flex>
+                    </Box>
                     <Box fontSize="lg" align="center" mb="4">
                         A highly-motivated Electrical Engineer with hands-on
                         engineering knowledge, teamwork skills and leadership
@@ -42,7 +43,7 @@ export default function About() {
                         engineering solutions.
                     </Box>
                     <Box mb="4">
-                        <Text>
+                        <Text lineHeight="tall">
                             Interests:{" "}
                             <Tag mx="1" colorScheme="blue">
                                 Power Electronics
@@ -59,7 +60,7 @@ export default function About() {
                         </Text>
                     </Box>
                     <Box mb="4">
-                        <Text>
+                        <Text lineHeight="tall">
                             Hobbies:{" "}
                             <Tag mx="1" colorScheme="blue">
                                 Reading
@@ -76,7 +77,7 @@ export default function About() {
                         </Text>
                     </Box>
                     <Box>
-                        <Text fontSize="lg">
+                        <Text textAlign="center" fontSize="lg">
                             Download my resume in PDF format{" "}
                             <NextLink href="/moeyehtet-resume.pdf" passHref>
                                 <Link

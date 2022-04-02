@@ -1,17 +1,22 @@
 import React, { useState } from "react";
 import NextLink from "next/link";
-import NavLinks from "./NavLinks";
 import {
-    Container,
+    Box,
     Flex,
+    Container,
     Center,
     Text,
     Link,
     Spacer,
-    Box,
+    Button,
+    Icon,
 } from "@chakra-ui/react";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import NavLinks from "./NavLinks";
 
-export default function Navbar() {
+export default function MobileNav() {
+    const [open, setOpen] = useState(false);
+
     return (
         <React.Fragment>
             <Flex
@@ -38,9 +43,24 @@ export default function Navbar() {
                         </Center>
                         <Spacer />
                         <Center>
-                            <NavLinks />
+                            <Button
+                                variant="ghost"
+                                aria-label="open and close menu"
+                                onClick={() => setOpen((prevOpen) => !prevOpen)}
+                            >
+                                {!open ? (
+                                    <Icon as={AiOutlineMenu} w={8} h={8} />
+                                ) : (
+                                    <Icon as={AiOutlineClose} w={8} h={8} />
+                                )}
+                            </Button>
                         </Center>
                     </Box>
+                    {open && (
+                        <Box pb="4">
+                            <NavLinks />
+                        </Box>
+                    )}
                 </Container>
             </Flex>
         </React.Fragment>
