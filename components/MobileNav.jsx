@@ -12,7 +12,8 @@ import {
     Icon,
 } from "@chakra-ui/react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import NavLinks from "./NavLinks";
+import NavLink from "./NavLink";
+import { navData } from "../data/data";
 
 export default function MobileNav() {
     const [open, setOpen] = useState(false);
@@ -58,7 +59,54 @@ export default function MobileNav() {
                     </Box>
                     {open && (
                         <Box pb="4">
-                            <NavLinks />
+                            <NextLink href="#about-me" passHref>
+                                <Link
+                                    display="block"
+                                    px="4"
+                                    py="2"
+                                    ml={{ base: 0, md: 2 }}
+                                    mx={{ base: "auto" }}
+                                    fontSize="lg"
+                                    fontWeight="normal"
+                                    onClick={() =>
+                                        setOpen((prevOpen) => !prevOpen)
+                                    }
+                                >
+                                    About Me
+                                </Link>
+                            </NextLink>
+                            <NextLink href="#contact" passHref>
+                                <Link
+                                    display="block"
+                                    px="4"
+                                    py="2"
+                                    ml={{ base: 0, md: 2 }}
+                                    mx={{ base: "auto" }}
+                                    fontSize="lg"
+                                    fontWeight="normal"
+                                    onClick={() =>
+                                        setOpen((prevOpen) => !prevOpen)
+                                    }
+                                >
+                                    Contact
+                                </Link>
+                            </NextLink>
+                            <NextLink href="#resume" passHref>
+                                <Link
+                                    display="block"
+                                    px="4"
+                                    py="2"
+                                    ml={{ base: 0, md: 2 }}
+                                    mx={{ base: "auto" }}
+                                    fontSize="lg"
+                                    fontWeight="normal"
+                                    onClick={() =>
+                                        setOpen((prevOpen) => !prevOpen)
+                                    }
+                                >
+                                    Resume
+                                </Link>
+                            </NextLink>
                         </Box>
                     )}
                 </Container>

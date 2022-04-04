@@ -10,7 +10,12 @@ import Honors from "./Honors";
 export default function Resume() {
     return (
         <React.Fragment>
-            <Container id="resume" maxW="container.md" py="8">
+            <Container
+                scrollMarginTop={{ base: 72, md: 75 }}
+                id="resume"
+                maxW="container.md"
+                py="8"
+            >
                 <Education />
                 <Skills />
                 <Experience />

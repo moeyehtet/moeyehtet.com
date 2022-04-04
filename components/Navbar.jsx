@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import NextLink from "next/link";
-import NavLinks from "./NavLinks";
+import NavLink from "./NavLink";
 import {
     Container,
     Flex,
@@ -10,6 +10,7 @@ import {
     Spacer,
     Box,
 } from "@chakra-ui/react";
+import { navData } from "../data/data";
 
 export default function Navbar() {
     return (
@@ -38,7 +39,9 @@ export default function Navbar() {
                         </Center>
                         <Spacer />
                         <Center>
-                            <NavLinks />
+                            {navData.map((nd) => (
+                                <NavLink key={nd.id} data={nd} />
+                            ))}
                         </Center>
                     </Box>
                 </Container>

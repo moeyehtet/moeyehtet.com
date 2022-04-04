@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Heading, Text } from "@chakra-ui/react";
+import { honsData } from "../data/data";
 
 export default function Honors() {
     return (
@@ -14,26 +15,18 @@ export default function Honors() {
                 >
                     HONORS
                 </Heading>
-                <Box mb="4">
-                    <Text
-                        fontSize="lg"
-                        fontWeight="semibold"
-                        textAlign="center"
-                    >
-                        Myanmar President&apos;s Scholarship
-                    </Text>
-                    <Text textAlign="center">2015-2019</Text>
-                </Box>
-                <Box mb="4">
-                    <Text
-                        fontSize="lg"
-                        fontWeight="semibold"
-                        textAlign="center"
-                    >
-                        Eli Shay Scholarship (Purdue ECE Department)
-                    </Text>
-                    <Text textAlign="center">2016-2017</Text>
-                </Box>
+                {honsData.map((hd) => (
+                    <Box key={hd.id} mb="4">
+                        <Text
+                            fontSize="lg"
+                            fontWeight="semibold"
+                            textAlign="center"
+                        >
+                            {hd.title}
+                        </Text>
+                        <Text textAlign="center">{hd.duration}</Text>
+                    </Box>
+                ))}
             </Box>
         </React.Fragment>
     );

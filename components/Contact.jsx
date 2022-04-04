@@ -1,19 +1,19 @@
 import React from "react";
-import {
-    Flex,
-    Box,
-    Text,
-    Container,
-    Icon,
-    Grid,
-    GridItem,
-} from "@chakra-ui/react";
+import { Link, Text, Container, Icon, Grid, GridItem } from "@chakra-ui/react";
 import { FaPhone, FaLinkedinIn, FaHome, FaEnvelope } from "react-icons/fa";
+import { contactData } from "../data/data";
 
 export default function Contact() {
+    const { phone, email, linkedin, address } = contactData;
+
     return (
         <React.Fragment>
-            <Container id="contact" maxW="container.md" py="8">
+            <Container
+                scrollMarginTop={{ base: 72, md: 75 }}
+                id="contact"
+                maxW="container.md"
+                py="8"
+            >
                 <Grid
                     templateColumns={{
                         base: "repeat(1, 1fr)",
@@ -24,24 +24,28 @@ export default function Contact() {
                 >
                     <GridItem>
                         <Text fontSize="lg">
-                            <Icon as={FaPhone} /> Phone: +95 9790647222
+                            <Icon as={FaPhone} mb="0" /> Phone:{" "}
+                            <Link href={`tel:${phone}`}>{phone}</Link>
                         </Text>
                         <Text fontSize="lg">
-                            <Icon as={FaEnvelope} /> Email:
-                            moeyehtet96@gmail.com
+                            <Icon as={FaEnvelope} /> Email:{" "}
+                            <Link href={`mailto:${email}`}>{email}</Link>
                         </Text>
                         <Text fontSize="lg">
-                            <Icon as={FaLinkedinIn} /> LinkedIn: moeyehtet96
+                            <Icon as={FaLinkedinIn} /> LinkedIn:{" "}
+                            <Link
+                                href={`https://www.linkedin.com/in/${linkedin}`}
+                                target="_blank"
+                            >
+                                {linkedin}
+                            </Link>
                         </Text>
                     </GridItem>
                     <GridItem>
                         <Text fontSize="lg">
                             <Icon as={FaHome} /> Address:
                         </Text>
-                        <Text fontSize="lg">
-                            No. 16, Lower Mandalay Street, Mingalar Taung Nyunt
-                            Tsp, Yangon, Myanmar 11221
-                        </Text>
+                        <Text fontSize="lg">{address}</Text>
                     </GridItem>
                 </Grid>
             </Container>

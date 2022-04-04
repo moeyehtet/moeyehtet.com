@@ -1,7 +1,10 @@
 import React from "react";
 import { Box, Heading, Text } from "@chakra-ui/react";
+import { eduData } from "../data/data";
 
 export default function Education() {
+    const { degree, uni, duration } = eduData;
+
     return (
         <React.Fragment>
             <Box mb="8">
@@ -15,13 +18,13 @@ export default function Education() {
                     EDUCATION
                 </Heading>
                 <Text fontSize="lg" textAlign="center" fontWeight="semibold">
-                    Bachelor of Science in Electrical Engineering
+                    {degree}
                 </Text>
                 <Text fontSize="lg" textAlign="center">
-                    Purdue University (West Lafayette, IN, USA)
+                    {uni}
                 </Text>
                 <Text fontSize="lg" textAlign="center">
-                    2015-2019
+                    {duration}
                 </Text>
             </Box>
         </React.Fragment>

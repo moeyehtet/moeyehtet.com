@@ -8,6 +8,7 @@ import {
     UnorderedList,
     ListItem,
 } from "@chakra-ui/react";
+import { projData } from "../data/data";
 
 export default function Projects() {
     return (
@@ -28,60 +29,31 @@ export default function Projects() {
                     gap={4}
                     alignItems="center"
                 >
-                    <GridItem rowSpan={1} colSpan={1}>
-                        <Text fontSize="lg">2019</Text>
-                    </GridItem>
-                    <GridItem
-                        colSpan={4}
-                        pl="4"
-                        borderLeft="1px"
-                        borderColor="gray.200"
-                    >
-                        <Text fontSize="lg" fontWeight="semibold">
-                            Digital Wavetable Synthesizer
-                        </Text>
-                        <Text>Senior Design Project for Graduation</Text>
-                        <UnorderedList>
-                            <ListItem>
-                                Designed the charging circuit and DC-DC
-                                converters for the power supply subsystem.
-                            </ListItem>
-                            <ListItem>
-                                Designed the ADSR module and amplifier circuit
-                                for sound output subsystem.
-                            </ListItem>
-                            <ListItem>
-                                Designed the PCBs for the power supply and sound
-                                output subsystems.
-                            </ListItem>
-                        </UnorderedList>
-                    </GridItem>
-                    <GridItem rowSpan={1} colSpan={1}>
-                        <Text fontSize="lg">2018</Text>
-                    </GridItem>
-                    <GridItem
-                        colSpan={4}
-                        pl="4"
-                        borderLeft="1px"
-                        borderColor="gray.200"
-                    >
-                        <Text fontSize="lg" fontWeight="semibold">
-                            Face-tracking Assistive Phone Mount
-                        </Text>
-                        <Text>
-                            Microprocessor Systems and Interfacing Final Project
-                        </Text>
-                        <UnorderedList>
-                            <ListItem>
-                                Performed system integration of LCD touchscreen
-                                controls and servo motors.
-                            </ListItem>
-                            <ListItem>
-                                Designed power supply circuit and PCB for the
-                                project.
-                            </ListItem>
-                        </UnorderedList>
-                    </GridItem>
+                    {projData.map((pd) => (
+                        <React.Fragment key={pd.id}>
+                            <GridItem rowSpan={1} colSpan={1}>
+                                <Text fontSize="lg">{pd.duration}</Text>
+                            </GridItem>
+                            <GridItem
+                                colSpan={4}
+                                pl="4"
+                                borderLeft="1px"
+                                borderColor="gray.200"
+                            >
+                                <Text fontSize="lg" fontWeight="semibold">
+                                    {pd.title}
+                                </Text>
+                                <Text>{pd.team}</Text>
+                                <UnorderedList>
+                                    {pd.points.map((pt) => (
+                                        <ListItem key={pt.id}>
+                                            {pt.content}
+                                        </ListItem>
+                                    ))}
+                                </UnorderedList>
+                            </GridItem>
+                        </React.Fragment>
+                    ))}
                 </Grid>
             </Box>
         </React.Fragment>
