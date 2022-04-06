@@ -1,15 +1,17 @@
 import React from "react";
 import NextLink from "next/link";
+import NextImage from "next/image";
 import {
     Flex,
     Box,
     Heading,
     Text,
-    Image,
     Container,
     Tag,
     Link,
+    chakra,
 } from "@chakra-ui/react";
+import profilePic from "../public/images/profile-photo.webp";
 import { aboutData } from "../data/data";
 
 export default function About() {
@@ -23,6 +25,21 @@ export default function About() {
         hobbies,
         resumeUrl,
     } = aboutData;
+
+    const Image = chakra(NextImage, {
+        baseStyle: { maxH: 150, maxW: 150 },
+        shouldForwardProp: (prop) =>
+            [
+                "width",
+                "height",
+                "src",
+                "alt",
+                "quality",
+                "placeholder",
+                "blurDataURL",
+                "loader ",
+            ].includes(prop),
+    });
 
     return (
         <React.Fragment>
@@ -38,14 +55,24 @@ export default function About() {
                         align="center"
                         mb="4"
                     >
-                        <Image
+                        <Box mr={{ base: 0, md: 8 }} mb={{ base: 4, md: 0 }}>
+                            <Image
+                                borderRadius="full"
+                                src={profilePic}
+                                alt={altText}
+                                width={150}
+                                height={150}
+                            />
+                        </Box>
+
+                        {/* <Image
                             borderRadius="full"
                             boxSize="150px"
                             mr={{ base: 0, md: 8 }}
                             mb={{ base: 4, md: 0 }}
                             src={imgUrl}
                             alt={altText}
-                        />
+                        /> */}
                         <Box
                             textAlign={{ base: "center", md: "start" }}
                             textTransform="capitalize"
@@ -90,20 +117,20 @@ export default function About() {
                             ))}
                         </Text>
                     </Box>
-                    <Box>
-                        <Text textAlign="center" fontSize="lg">
-                            Download my resume in PDF format{" "}
-                            <NextLink href={resumeUrl} passHref>
-                                <Link
-                                    fontWeight="semibold"
-                                    color="blue.500"
-                                    target="_blank"
-                                >
-                                    HERE
-                                </Link>
-                            </NextLink>
-                            .
+                    <Box textAlign="center">
+                        <Text textAlign="center" fontSize="lg" mb="2">
+                            Download my resume in PDF format below.
                         </Text>
+                        <NextLink href={resumeUrl} passHref>
+                            <Link
+                                fontSize="lg"
+                                fontWeight="semibold"
+                                color="blue.600"
+                                target="_blank"
+                            >
+                                Download Resume
+                            </Link>
+                        </NextLink>
                     </Box>
                 </Flex>
             </Container>
