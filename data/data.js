@@ -81,7 +81,7 @@ export const contactData = {
     email: "moeyehtet96@gmail.com",
     linkedin: "moeyehtet96",
     address:
-        "No. 16, Lower Mandalay Street, Mingalar Taung Nyunt Tsp, Yangon, Myanmar 11221",
+        "No. 16, Dhammar Yone St, Mingalar Taung Nyunt Tsp, Yangon, Myanmar 11221",
 };
 
 export const eduData = {
@@ -135,6 +135,24 @@ export const skillsData = [
 ];
 
 export const expData = [
+    {
+        id: uuidv4(),
+        title: "Project Management Officer",
+        team: "Thate Pan Hub - Innovation Department",
+        duration: "2021-2022",
+        points: [
+            {
+                id: uuidv4(),
+                content:
+                    "Developed a project for teaching basic computer science to children and supervised the volunteers during the implementation of the project.",
+            },
+            {
+                id: uuidv4(),
+                content:
+                    "Coordinated tasks and responsibilities with Academic and Creative departments to provide video lessons for Basic Education level IT courses.",
+            },
+        ],
+    },
     {
         id: uuidv4(),
         title: "Undergraduate Teaching Assistant",
