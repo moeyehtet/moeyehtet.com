@@ -79,11 +79,11 @@ export const aboutData = {
 };
 
 export const contactData = {
-  phone: "+959790647222",
+  phone: "+66-988961408",
   email: "moeyehtet96@gmail.com",
   linkedin: "moeyehtet96",
   address:
-    "No. 16, Dhammar Yone St, Mingalar Taung Nyunt Tsp, Yangon, Myanmar 11221",
+    "85 Soi Sukhumvit 64, Room 410, Bangkok, Thailand 10260",
 };
 
 export const eduData = {
@@ -190,7 +190,7 @@ export const expData = [
       {
         id: uuidv4(),
         content:
-          "Led the lab sessions and provided technical and theoretical assistance to students for an academic year",
+          "Led the lab sessions and provided technical and theoretical assistance to students for an academic year.",
       },
       {
         id: uuidv4(),
