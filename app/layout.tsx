@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import PrelineScript from "./components/PrelineScript";
-import NavBar from "./NavBar";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main>{children}</main>
+        <div className="max-w-screen-lg flex flex-col mx-auto h-screen">
+          <NavBar />
+          <main id="content" role="main" className="grow">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
       <PrelineScript />
     </html>

@@ -16,12 +16,14 @@
   }
 }
 
-body {
-  background-color: black;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-nord0;
   }
 }
