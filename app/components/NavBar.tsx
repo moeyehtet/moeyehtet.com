@@ -1,4 +1,23 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
+
+const navbarData = [
+  {
+    id: uuidv4(),
+    title: "Home",
+    link: "/",
+  },
+  {
+    id: uuidv4(),
+    title: "Resume",
+    link: "/resume",
+  },
+  {
+    id: uuidv4(),
+    title: "Contact",
+    link: "/contact",
+  },
+];
 
 const NavBar = () => {
   return (
@@ -62,31 +81,15 @@ const NavBar = () => {
           className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block"
         >
           <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
-            <a
-              className="font-medium text-nord6 focus:outline-none focus:ring-1 focus:ring-nord3"
-              href="/"
-              aria-current="page"
-            >
-              Home
-            </a>
-            <a
-              className="font-medium text-nord4 hover:text-nord3 focus:outline-none focus:ring-1 focus:ring-nord2"
-              href="/resume"
-            >
-              Resume
-            </a>
-            <a
-              className="font-medium text-nord4 hover:text-nord3 focus:outline-none focus:ring-1 focus:ring-nord2"
-              href="/contact"
-            >
-              Contact
-            </a>
-            <a
-              className="font-medium text-nord4 hover:text-nord3 focus:outline-none focus:ring-1 focus:ring-nord2"
-              href="/blog"
-            >
-              Blog
-            </a>
+            {navbarData.map((nd) => (
+              <a
+                key={nd.id}
+                className="font-medium text-nord6 focus:outline-none focus:ring-1 focus:ring-nord3"
+                href={nd.link}
+              >
+                {nd.title}
+              </a>
+            ))}
           </div>
         </div>
       </nav>
