@@ -9,7 +9,7 @@ const Honors = () => {
       <div className="text-nord6">
         <div className="mt-4">
           <h3 className="text-xl text-center font-semibold">
-            Myanmar President's Scholarship
+            Myanmar President&rsquo;s Scholarship
           </h3>
         </div>
         <div className="mt-4">
