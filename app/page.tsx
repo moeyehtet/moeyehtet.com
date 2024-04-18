@@ -17,9 +17,17 @@ export default function Home() {
       <p className="mt-2 text-xl text-nord6 tracking-widest">
         ELECTRICAL ENGINEER
       </p>
-      <p className="mt-3 text-lg text-nord6">
-        Hands-on experience, Leadership skills, Top-notch Teamwork
-      </p>
+      <ul className="mt-3 text-lg text-nord6">
+        <li className="inline-block relative pe-8 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-3 before:-translate-y-1/2 before:size-1 before:bg-gray-300 before:rounded-full dark:text-neutral-400 dark:before:bg-neutral-600">
+          Hands-on experience
+        </li>
+        <li className="inline-block relative pe-8 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-3 before:-translate-y-1/2 before:size-1 before:bg-gray-300 before:rounded-full dark:text-neutral-400 dark:before:bg-neutral-600">
+          Leadership skills
+        </li>
+        <li className="inline-block relative pe-8 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-3 before:-translate-y-1/2 before:size-1 before:bg-gray-300 before:rounded-full dark:text-neutral-400 dark:before:bg-neutral-600">
+          Top-notch Teamwork
+        </li>
+      </ul>
       <div className="mt-3 flex justify-center">
         <div className="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium border border-nord7 text-nord6 mx-1">
           Embedded Systems
