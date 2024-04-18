@@ -1,4 +1,5 @@
 import React from "react";
+import { projectEntries } from "@/data/data";
 
 const Projects = () => {
   return (
@@ -7,22 +8,18 @@ const Projects = () => {
         Projects
       </h2>
       <div className="text-nord6">
-        <div className="mt-4">
-          <h3 className="text-xl text-center font-semibold">
-            Digital Wave Synthesizer
-          </h3>
-          <p className="text-lg text-center">
-            Senior Design Project for Bachelor Degree
-          </p>
-        </div>
-        <div className="mt-4">
-          <h3 className="text-xl text-center font-semibold">
-            Face-tracking Assistive Phone Mount
-          </h3>
-          <p className="text-lg text-center">
-            Final Project for Microprocessor Systems and Interfacing Course
-          </p>
-        </div>
+        {projectEntries.map((pe) => (
+          <div key={pe.id} className="mt-4">
+            <h3 className="text-xl text-center font-semibold">{pe.title}</h3>
+            <p className="text-lg text-center">{pe.course}</p>
+            <p className="text-center">{pe.year}</p>
+            <ul className="list-disc list-inside text-justify">
+              {pe.points.map((pt) => (
+                <li key={pt.ptId}>{pt.ptContent}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );

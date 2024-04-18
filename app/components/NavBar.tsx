@@ -1,23 +1,5 @@
 import React from "react";
-import { v4 as uuidv4 } from "uuid";
-
-const navbarData = [
-  {
-    id: uuidv4(),
-    title: "Home",
-    link: "/",
-  },
-  {
-    id: uuidv4(),
-    title: "Resume",
-    link: "/resume",
-  },
-  {
-    id: uuidv4(),
-    title: "Contact",
-    link: "/contact",
-  },
-];
+import { navData } from "@/data/data";
 
 const NavBar = () => {
   return (
@@ -81,7 +63,7 @@ const NavBar = () => {
           className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block"
         >
           <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
-            {navbarData.map((nd) => (
+            {navData.map((nd) => (
               <a
                 key={nd.id}
                 className="font-medium text-nord6 focus:outline-none focus:ring-1 focus:ring-nord3"

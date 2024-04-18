@@ -1,4 +1,5 @@
 import React from "react";
+import { honorsEntries } from "@/data/data";
 
 const Honors = () => {
   return (
@@ -7,19 +8,13 @@ const Honors = () => {
         Honors
       </h2>
       <div className="text-nord6">
-        <div className="mt-4">
-          <h3 className="text-xl text-center font-semibold">
-            Myanmar President&rsquo;s Scholarship
-          </h3>
-        </div>
-        <div className="mt-4">
-          <h3 className="text-xl text-center font-semibold">
-            Eli Shay Scholarship
-          </h3>
-          <p className="text-lg text-center">
-            Purdue University ECE Department
-          </p>
-        </div>
+        {honorsEntries.map((he) => (
+          <div key={he.id} className="mt-4">
+            <h3 className="text-xl text-center font-semibold">{he.award}</h3>
+            <p className="text-lg text-center">{he.sponsor}</p>
+            <p className="text-center">{he.duration}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
