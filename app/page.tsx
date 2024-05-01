@@ -1,6 +1,56 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import profilePic from "../public/Profile_Sq.png";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Moe Ye Htet - Electrical Engineer",
+  description:
+    "Moe Ye Htet's resume website for an enthusiastic Electrical Engineer",
+  keywords: [
+    "electrical engineering",
+    "embedded systems",
+    "circuit design",
+    "pcb design",
+    "power electronics",
+    "nextjs",
+    "purdue",
+  ],
+  openGraph: {
+    url: "https://moeyehtet.com",
+    type: "website",
+    title: "Moe Ye Htet - Electrical Engineer",
+    description:
+      "Moe Ye Htet's resume website for an enthusiastic Electrical Engineer",
+    images: [
+      {
+        url: "https://moeyehtet.com/Profile_Sq.png",
+        width: 900,
+        height: 900,
+        alt: "Moe Ye Htet",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Moe Ye Htet - Electrical Engineer",
+    description:
+      "Moe Ye Htet's resume website for an enthusiastic Electrical Engineer",
+    creator: "@moeyehtet96",
+    site: "@moeyehtet96",
+    images: [
+      {
+        url: "https://moeyehtet.com/Profile_Sq.png",
+        width: 900,
+        height: 900,
+        alt: "Moe Ye Htet",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://moeyehtet.com",
+  },
+};
 
 export default function Home() {
   return (
