@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  PhoneIcon,
-  HomeIcon,
-  EnvelopeIcon,
-  BriefcaseIcon,
-} from "@heroicons/react/24/solid";
+import { HiPhone, HiEnvelope, HiBriefcase, HiHome } from "react-icons/hi2";
 
 const Contact = () => {
   return (
@@ -14,7 +9,7 @@ const Contact = () => {
       </h2>
       <div className="mt-8">
         <h3 className="text-xl text-center font-semibold text-nord6 tracking-widest uppercase flex justify-center items-center">
-          <EnvelopeIcon className="inline-block w-6 h-6 text-nord6 mr-2" />
+          <HiEnvelope className="inline-block text-2xl text-nord6 mr-2" />
           <span className="inline-block">Email</span>
         </h3>
         <a
@@ -27,7 +22,7 @@ const Contact = () => {
       <hr className="border-nord2 my-8" />
       <div>
         <h3 className="text-xl text-center font-semibold text-nord6 tracking-widest uppercase flex justify-center items-center">
-          <PhoneIcon className="inline-block w-6 h-6 text-nord6 mr-2" />
+          <HiPhone className="inline-block text-2xl text-nord6 mr-2" />
           <span className="inline-block">Phone</span>
         </h3>
         <a
@@ -40,7 +35,7 @@ const Contact = () => {
       <hr className="border-nord2 my-8" />
       <div>
         <h3 className="text-xl text-center font-semibold text-nord6 tracking-widest uppercase flex justify-center items-center">
-          <BriefcaseIcon className="inline-block w-6 h-6 text-nord6 mr-2" />
+          <HiBriefcase className="inline-block text-2xl text-nord6 mr-2" />
           <span className="inline-block">LinkedIn</span>
         </h3>
         <a
@@ -53,7 +48,7 @@ const Contact = () => {
       <hr className="border-nord2 my-8" />
       <div>
         <h3 className="text-xl text-center font-semibold text-nord6 tracking-widest uppercase flex justify-center items-center">
-          <HomeIcon className="inline-block w-6 h-6 text-nord6 mr-2" />
+          <HiHome className="inline-block text-2xl text-nord6 mr-2" />
           <span className="inline-block">Address</span>
         </h3>
         <address className="mt-2 text-lg text-center text-nord6 not-italic">

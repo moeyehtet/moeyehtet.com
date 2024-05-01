@@ -1,4 +1,19 @@
 import { v4 as uuidv4 } from "uuid";
+import { IconType } from "react-icons";
+import {
+  SiMicrosoft,
+  SiGoogledrive,
+  SiSlack,
+  SiAutodesk,
+  SiLinux,
+  SiLtspice,
+  SiC,
+  SiCplusplus,
+  SiPython,
+  SiJavascript,
+  SiTypescript,
+} from "react-icons/si";
+import { HiLanguage } from "react-icons/hi2";
 
 export interface INavData {
   id: string;
@@ -40,6 +55,12 @@ export interface IHonorsEntry {
   award: string;
   sponsor: string;
   duration: string;
+}
+
+export interface ISkillsEntry {
+  id: string;
+  icon: IconType;
+  name: string;
 }
 
 export const navData: INavData[] = [
@@ -199,5 +220,92 @@ export const honorsEntries: IHonorsEntry[] = [
     award: "Eli Shay Scholarship",
     sponsor: "Purdue University ECE Department",
     duration: "2016 - 2017",
+  },
+];
+
+export const adminSkills: ISkillsEntry[] = [
+  {
+    id: uuidv4(),
+    icon: SiMicrosoft,
+    name: "Office Suite",
+  },
+  {
+    id: uuidv4(),
+    icon: SiGoogledrive,
+    name: "Google Suite",
+  },
+  {
+    id: uuidv4(),
+    icon: SiSlack,
+    name: "Slack",
+  },
+];
+
+export const engrSkills: ISkillsEntry[] = [
+  {
+    id: uuidv4(),
+    icon: SiAutodesk,
+    name: "EAGLE PCB",
+  },
+  {
+    id: uuidv4(),
+    icon: SiAutodesk,
+    name: "AutoCAD",
+  },
+  {
+    id: uuidv4(),
+    icon: SiLtspice,
+    name: "LTSpice",
+  },
+  {
+    id: uuidv4(),
+    icon: SiLinux,
+    name: "Linux",
+  },
+];
+
+export const programmingSkills: ISkillsEntry[] = [
+  {
+    id: uuidv4(),
+    icon: SiC,
+    name: "C",
+  },
+  {
+    id: uuidv4(),
+    icon: SiCplusplus,
+    name: "C++",
+  },
+  {
+    id: uuidv4(),
+    icon: SiPython,
+    name: "Python",
+  },
+  {
+    id: uuidv4(),
+    icon: SiJavascript,
+    name: "Javascript",
+  },
+  {
+    id: uuidv4(),
+    icon: SiTypescript,
+    name: "Typescript",
+  },
+];
+
+export const languageSkills: ISkillsEntry[] = [
+  {
+    id: uuidv4(),
+    icon: HiLanguage,
+    name: "English (Business)",
+  },
+  {
+    id: uuidv4(),
+    icon: HiLanguage,
+    name: "Japanese (N3)",
+  },
+  {
+    id: uuidv4(),
+    icon: HiLanguage,
+    name: "Burmese (Native)",
   },
 ];

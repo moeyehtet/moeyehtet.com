@@ -74,7 +74,7 @@ const NavBar = () => {
                 className={
                   currentPath === nd.link
                     ? "font-medium text-nord6"
-                    : "font-medium text-slate-400"
+                    : "font-medium text-slate-400 hover:text-nord4"
                 }
                 href={nd.link}
               >

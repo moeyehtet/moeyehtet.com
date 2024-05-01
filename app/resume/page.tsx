@@ -5,6 +5,7 @@ import Experience from "./Experience";
 import Projects from "./Projects";
 import Leadership from "./Leadership";
 import Honors from "./Honors";
+import Skills from "./Skills";
 
 const Resume = () => {
   return (
@@ -14,6 +15,8 @@ const Resume = () => {
       <Experience />
       <hr className="border-nord2 my-8" />
       <Projects />
+      <hr className="border-nord2 my-8" />
+      <Skills />
       <hr className="border-nord2 my-8" />
       <Education />
       <hr className="border-nord2 my-8" />
