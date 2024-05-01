@@ -9,7 +9,7 @@ import Skills from "./Skills";
 
 const Resume = () => {
   return (
-    <div className="max-w-screen-sm mx-auto py-10 px-4 sm:px-6 lg:px-8">
+    <div className="max-w-screen-sm mx-auto py-10 px-8">
       <Objective />
       <hr className="border-nord2 my-8" />
       <Experience />

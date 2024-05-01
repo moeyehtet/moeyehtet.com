@@ -3,7 +3,7 @@ import { HiPhone, HiEnvelope, HiBriefcase, HiHome } from "react-icons/hi2";
 
 const Contact = () => {
   return (
-    <div className="max-w-screen-sm mx-auto flex flex-col h-full justify-center py-10 px-4 sm:px-6 lg:px-8">
+    <div className="max-w-screen-sm mx-auto flex flex-col h-full justify-center py-10 px-8">
       <h2 className="text-2xl text-center font-bold text-nord6 tracking-widest uppercase">
         Contact Me
       </h2>

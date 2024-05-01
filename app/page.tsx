@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 h-full justify-center text-center py-10 px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col flex-1 h-full justify-center text-center py-10 px-8">
       <Image
         className="mx-auto rounded-full"
         src={profilePic}
