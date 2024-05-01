@@ -1,5 +1,6 @@
 import Image from "next/image";
 import profilePic from "../public/Profile_Sq.png";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -70,18 +71,20 @@ export default function Home() {
             className="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-nord5 shadow-md rounded-lg p-2 mt-2 dark:bg-nord1 dark:border dark:border-nord3 dark:divide-nord3 after:h-4 after:absolute after:-bottom-4 after:start-0 after:w-full before:h-4 before:absolute before:-top-4 before:start-0 before:w-full"
             aria-labelledby="hs-dropdown-default"
           >
-            <a
+            <Link
               className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-nord1 hover:bg-nord4 focus:outline-none focus:bg-nord4 dark:text-nord4 dark:hover:bg-nord3 dark:hover:text-nord6 dark:focus:bg-nord3"
               href="/resume"
             >
               View in Web
-            </a>
-            <a
+            </Link>
+            <Link
               className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-nord1 hover:bg-nord4 focus:outline-none focus:bg-nord4 dark:text-nord4 dark:hover:bg-nord3 dark:hover:text-nord6 dark:focus:bg-nord3"
-              href="#"
+              href="/MoeYe_Htet-Resume.pdf"
+              target="_blank"
+              rel="noopener noreferer"
             >
               Download as PDF
-            </a>
+            </Link>
           </div>
         </div>
         <a
