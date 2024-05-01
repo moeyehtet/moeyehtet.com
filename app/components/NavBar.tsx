@@ -1,7 +1,12 @@
+"use client";
 import React from "react";
 import { navData } from "@/data/data";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NavBar = () => {
+  const currentPath = usePathname();
+
   return (
     <header className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full text-sm py-4">
       <nav
@@ -10,7 +15,7 @@ const NavBar = () => {
       >
         <div className="flex items-center justify-between">
           <a
-            className="flex-none text-xl font-semibold text-nord6 focus:outline-none focus:ring-1 focus:ring-nord3 tracking-widest"
+            className="flex-none text-xl font-semibold text-nord6 tracking-widest"
             href="/"
             aria-label="Brand"
           >
@@ -64,13 +69,17 @@ const NavBar = () => {
         >
           <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
             {navData.map((nd) => (
-              <a
+              <Link
                 key={nd.id}
-                className="font-medium text-nord6 focus:outline-none focus:ring-1 focus:ring-nord3"
+                className={
+                  currentPath === nd.link
+                    ? "font-medium text-nord6"
+                    : "font-medium text-slate-400"
+                }
                 href={nd.link}
               >
                 {nd.title}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
