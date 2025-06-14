@@ -14,6 +14,7 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import { HiLanguage } from "react-icons/hi2";
+import MatlabSvg from "../public/matlab.svg";
 
 export interface INavData {
   id: string;
@@ -72,24 +73,47 @@ export const navData: INavData[] = [
 export const resumeEntries: IResumeEntry[] = [
   {
     id: uuidv4(),
-    title: "Project Management Co-officer",
+    title: "Project Management Co-Officer",
     company: "Thate Pan Hub - Innovation Department",
-    duration: "2021 - 2022",
+    duration: "January 2022 - December 2023",
     points: [
       {
         ptId: uuidv4(),
         ptContent:
-          "Developed and successfully implemented a project for teaching basic computer science to children in Hpa-an, Karen State.",
+          "Delivered basic computer science courses to over 250 students across three schools in Hpa-an, Karen State, increasing exposure to STEM education.",
       },
       {
         ptId: uuidv4(),
         ptContent:
-          "Conducted training of trainers (ToT) with Academic Department.",
+          "Led Training of Trainers (TOT) workshops for volunteer teachers in coordination with the academic team, enhancing local teaching capacity.",
       },
       {
         ptId: uuidv4(),
         ptContent:
-          "Coordinated tasks and responsibilities of the trainers for arranging classes and giving lectures to children at various schools.",
+          "Managed end-to-end production of digital literacy video lectures, including lesson plans, voiceovers and video editing.",
+      },
+    ],
+  },
+  {
+    id: uuidv4(),
+    title: "Junior Engineer",
+    company: "IEM Company Ltd",
+    duration: "February 2020 - December 2021",
+    points: [
+      {
+        ptId: uuidv4(),
+        ptContent:
+          "Designed schematics and electrical panels for installations at projects across commercial, industrial, and construction sites.",
+      },
+      {
+        ptId: uuidv4(),
+        ptContent:
+          "Coordinated with clients, and conducted site inspections to monitor project progress and proactively resolve technical issues.",
+      },
+      {
+        ptId: uuidv4(),
+        ptContent:
+          "Conducted internal training sessions on electrical components used in projects, improving cross-functional understanding among project teams.",
       },
     ],
   },
@@ -97,53 +121,35 @@ export const resumeEntries: IResumeEntry[] = [
     id: uuidv4(),
     title: "Undergraduate Teaching Assistant",
     company: "Purdue University - Electronic Measurement Techniques Lab",
-    duration: "2018 - 2019",
+    duration: "August 2018 - May 2019",
     points: [
       {
         ptId: uuidv4(),
         ptContent:
-          "Led the lab sessions and provided technical and theoretical assistance to students for an academic year.",
+          "Supported over 50 students during the academic year by providing hands-on and theoretical assistance during lab sessions and office hours.",
       },
       {
         ptId: uuidv4(),
         ptContent:
-          "Performed equipment maintenance and kept inventory of lab materials.",
+          "Performed routine maintenance, and managed inventory of lab equipment and electronic components at the lab storage.",
       },
     ],
   },
   {
     id: uuidv4(),
     title: "Controls Engineer",
-    company: "EPICS Program - Purdue Orbital Team",
-    duration: "2017-2018",
+    company: "EPICS Program - Purdue Orbital",
+    duration: "August 2016 - May 2017",
     points: [
       {
         ptId: uuidv4(),
         ptContent:
-          "Designed PID control system for DC worm gear motor and linear actuator.",
+          "Designed and implemented a PID control system for DC worm gear motor and linear actuator to automate launch platform orientation.",
       },
       {
         ptId: uuidv4(),
         ptContent:
-          "Designed the power supply circuit for the control system and designed the PCB.",
-      },
-    ],
-  },
-  {
-    id: uuidv4(),
-    title: "Undergraduate Research Assistant",
-    company: "Vertically Integrated Projects - Signal Integrity Team",
-    duration: "2016 - 2017",
-    points: [
-      {
-        ptId: uuidv4(),
-        ptContent:
-          "Conducted research about electromagnetic compatibility regulations and suitable compliance testing techniques.",
-      },
-      {
-        ptId: uuidv4(),
-        ptContent:
-          "Developed a radiative and conductive compliance test using the spectrum analyzer.",
+          "Developed and laid out PCB designs for the power supply and the control system modules using EaglePCB.",
       },
     ],
   },
@@ -153,23 +159,23 @@ export const projectEntries: IProjectEntry[] = [
   {
     id: uuidv4(),
     title: "Digital Wavetable Synthesizer",
-    course: "Senior Design Project for Bachelor Degree",
-    year: "2019",
+    course: "Senior Design Project for Graduation — Purdue University",
+    year: "January 2019 - May 2019",
     points: [
       {
         ptId: uuidv4(),
         ptContent:
-          "Designed the charging circuit and DC-DC converters for the power supply subsystem.",
+          "Designed the charging circuit for the Li-Po battery and DC-DC buck converters for the power supply subsystem.",
       },
       {
         ptId: uuidv4(),
         ptContent:
-          "Designed the ADSR module and amplifier circuit for sound output subsystem.",
+          "Designed the ADSR envelope and class AB amplifier circuits for audio output.",
       },
       {
         ptId: uuidv4(),
         ptContent:
-          "Designed the PCBs for the power supply and sound output subsystems.",
+          "Designed the PCB layouts for the power supply and sound output subsystems using EaglePCB.",
       },
     ],
   },
@@ -177,16 +183,17 @@ export const projectEntries: IProjectEntry[] = [
     id: uuidv4(),
     title: "Face-tracking Assistive Phone Mount",
     course: "Final Project for Microprocessor Systems and Interfacing Course",
-    year: "2018",
+    year: "January 2018 - May 2018",
     points: [
       {
         ptId: uuidv4(),
         ptContent:
-          "Performed system integration of LCD touchscreen controls and servo motors.",
+          "Programmed the STM32 microcontroller to control the servo motors according to the camera input, and to integrate with touchscreen interface for manual positioning.",
       },
       {
         ptId: uuidv4(),
-        ptContent: "Designed power supply circuit and PCB for the project.",
+        ptContent:
+          "Designed PCB layout for the project, including the power supply circuit using EaglePCB.",
       },
     ],
   },
@@ -198,13 +205,13 @@ export const leadershipEntries: ILeadershipEntry[] = [
     position: "Chair of Multicultural Relations Committee",
     association:
       "Electrical and Computer Engineering Student Society (Purdue University)",
-    duration: "2017 - 2019",
+    duration: "August 2017 - May 2019",
   },
   {
     id: uuidv4(),
     position: "Co-founder and Vice-President",
     association: "Myanmar Students Association (Purdue University)",
-    duration: "2018 - 2019",
+    duration: "August 2018 - May 2019",
   },
 ];
 
@@ -213,13 +220,13 @@ export const honorsEntries: IHonorsEntry[] = [
     id: uuidv4(),
     award: "Myanmar President's Scholarship",
     sponsor: "Government of the Republic of the Union of Myanmar",
-    duration: "2015 - 2019",
+    duration: "August 2015 - May 2019",
   },
   {
     id: uuidv4(),
     award: "Eli Shay Scholarship",
     sponsor: "Purdue University ECE Department",
-    duration: "2016 - 2017",
+    duration: "August 2016 - May 2017",
   },
 ];
 
@@ -262,6 +269,11 @@ export const engrSkills: ISkillsEntry[] = [
     icon: SiLinux,
     name: "Linux",
   },
+  {
+    id: uuidv4(),
+    icon: MatlabSvg,
+    name: "MATLAB",
+  },
 ];
 
 export const programmingSkills: ISkillsEntry[] = [
@@ -296,12 +308,17 @@ export const languageSkills: ISkillsEntry[] = [
   {
     id: uuidv4(),
     icon: HiLanguage,
-    name: "English (Business)",
+    name: "English (C1)",
   },
   {
     id: uuidv4(),
     icon: HiLanguage,
-    name: "Japanese (N3)",
+    name: "Japanese (N2)",
+  },
+  {
+    id: uuidv4(),
+    icon: HiLanguage,
+    name: "German (Beginner)",
   },
   {
     id: uuidv4(),

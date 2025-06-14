@@ -29,11 +29,11 @@ const Contact = () => {
           className="block mt-2 text-lg text-center text-nord6"
           href="tel: +959790647222"
         >
-          +95-9790647222
+          +66-988961408
         </a>
       </div>
       <hr className="border-nord2 my-8" />
-      <div>
+      {/* <div>
         <h3 className="text-xl text-center font-semibold text-nord6 tracking-widest uppercase flex justify-center items-center">
           <HiBriefcase className="inline-block text-2xl text-nord6 mr-2" />
           <span className="inline-block">LinkedIn</span>
@@ -45,18 +45,18 @@ const Contact = () => {
           @moeyehtet96
         </a>
       </div>
-      <hr className="border-nord2 my-8" />
+      <hr className="border-nord2 my-8" /> */}
       <div>
         <h3 className="text-xl text-center font-semibold text-nord6 tracking-widest uppercase flex justify-center items-center">
           <HiHome className="inline-block text-2xl text-nord6 mr-2" />
           <span className="inline-block">Address</span>
         </h3>
         <address className="mt-2 text-lg text-center text-nord6 not-italic">
-          16 Ground Floor Dhammaryone St
+          199/784 Laselle Rd
           <br />
-          Mingalar Taung Nyunt Tsp
+          Bang Na Tai, Bang Na
           <br />
-          Yangon, Myanmar 11221
+          Bangkok, Thailand 10260
         </address>
       </div>
     </div>

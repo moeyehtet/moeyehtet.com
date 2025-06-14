@@ -84,10 +84,10 @@ export default function Home() {
           Embedded Systems
         </div>
         <div className="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium border border-nord8 text-nord6 dark:border-nord8 mx-1">
-          Power Electronics
+          Electronics
         </div>
         <div className="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium border border-nord9 text-nord6 mx-1">
-          Control Systems
+          Software Engineering
         </div>
         <div className="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium border border-nord10 text-nord6 mx-1">
           Circuit Design
@@ -139,7 +139,7 @@ export default function Home() {
         </div>
         <a
           className="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-nord5 bg-nord6 text-nord0 shadow-sm hover:bg-nord4 disabled:opacity-50 disabled:pointer-events-none dark:bg-nord1 dark:border-nord2 dark:text-nord6 dark:hover:bg-nord2 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-nord3"
-          href="#"
+          href="/contact"
         >
           Contact Me
         </a>

@@ -11,7 +11,7 @@ const SkillItem = ({ data }: Props) => {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <Icon className="text-2xl" />
+      {/* <Icon className="text-2xl" /> */}
       <p className="mt-2 text-center">{name}</p>
     </div>
   );
