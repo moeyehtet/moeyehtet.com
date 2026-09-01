@@ -1,0 +1,108 @@
+---
+
+---
+
+<nav
+  class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-8"
+  aria-label="Primary"
+>
+  <a
+    href="/"
+    class="text-sm font-semibold tracking-tight text-neutral-900 transition hover:text-neutral-600"
+    aria-label="Moe Ye Htet — home"
+  >
+    Moe Ye Htet
+    <span class="hidden font-normal text-neutral-500 sm:inline"> — Automotive Software Engineer</span>
+  </a>
+
+  <!-- Desktop links -->
+  <div class="hidden items-center gap-8 md:flex">
+    <a href="/" class="text-sm text-neutral-600 transition hover:text-neutral-900">Home</a>
+    <a href="/resume" class="text-sm text-neutral-600 transition hover:text-neutral-900">Resume</a>
+    <a href="/contact" class="text-sm text-neutral-600 transition hover:text-neutral-900">Contact</a>
+    <a
+      href="/resume.pdf"
+      download
+      class="inline-flex items-center rounded-md bg-neutral-900 px-3.5 py-1.5 text-sm font-medium text-white transition hover:bg-neutral-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900"
+    >
+      Download Resume
+    </a>
+  </div>
+
+  <!-- Mobile toggle -->
+  <button
+    type="button"
+    id="nav-toggle"
+    class="inline-flex items-center justify-center rounded-md p-2 text-neutral-600 transition hover:bg-neutral-50 hover:text-neutral-900 md:hidden"
+    aria-expanded="false"
+    aria-controls="nav-mobile"
+    aria-label="Toggle navigation"
+  >
+    <svg
+      id="icon-open"
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg
+    >
+    <svg
+      id="icon-close"
+      class="hidden"
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg
+    >
+  </button>
+</nav>
+
+<!-- Mobile panel -->
+<div
+  id="nav-mobile"
+  class="hidden border-t border-neutral-100 md:hidden"
+  aria-hidden="true"
+>
+  <div class="mx-auto flex max-w-6xl flex-col gap-1 px-6 py-4">
+    <a href="/" class="rounded-md px-3 py-2 text-sm text-neutral-700 hover:bg-neutral-50">Home</a>
+    <a href="/resume" class="rounded-md px-3 py-2 text-sm text-neutral-700 hover:bg-neutral-50"
+      >Resume</a
+    >
+    <a href="/contact" class="rounded-md px-3 py-2 text-sm text-neutral-700 hover:bg-neutral-50"
+      >Contact</a
+    >
+    <a
+      href="/resume.pdf"
+      download
+      class="mt-2 inline-flex items-center justify-center rounded-md bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-neutral-700"
+      >Download Resume</a
+    >
+  </div>
+</div>
+
+<script>
+  const toggle = document.getElementById("nav-toggle");
+  const panel = document.getElementById("nav-mobile");
+  const iconOpen = document.getElementById("icon-open");
+  const iconClose = document.getElementById("icon-close");
+
+  toggle?.addEventListener("click", () => {
+    const expanded = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!expanded));
+    panel?.classList.toggle("hidden", expanded);
+    panel?.setAttribute("aria-hidden", String(expanded));
+    iconOpen?.classList.toggle("hidden", !expanded);
+    iconClose?.classList.toggle("hidden", expanded);
+  });
+</script>

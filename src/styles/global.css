@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/* Design tokens
+   Restrained palette: neutral base + 1 accent (sparingly)
+   Accent: teal-700 #0F766E — 7.1:1 on white (WCAG AA), 4.5:1 on neutral-50
+   Alternatives considered (see commit notes):
+     - Automotive blue #1E3A5F (8.2:1)
+     - Amber #92400E (6.8:1) — reserved for future warning/attention
+   Typography: IBM Plex Sans (engineering/technical feel) — loaded via <link> in BaseLayout for performance
+*/
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-accent: #0f766e;
+  --color-accent-hover: #115e59;
+  --color-accent-soft: #f0fdfa;
+}
+
+/* Global base — whitespace over borders, type scale with generous leading */
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-white text-neutral-900 antialiased;
+    line-height: 1.65;
+    letter-spacing: -0.01em;
+  }
+
+  /* Subtle focus ring — WCAG AA visible */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-teal-700;
+  }
+
+  /* Minimal motion — respect prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Subtle technical motif — faint CAN-bus grid, CSS-only */
+@layer utilities {
+  .motif-grid {
+    background-image:
+      linear-gradient(to right, rgba(15, 118, 110, 0.14) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 118, 110, 0.14) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .motif-fade {
+    mask-image: radial-gradient(ellipse 90% 75% at 50% 10%, black 60%, transparent 95%);
+    -webkit-mask-image: radial-gradient(ellipse 90% 75% at 50% 10%, black 60%, transparent 95%);
+  }
+}

@@ -1,0 +1,182 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import Entry from "../components/Entry.astro";
+import SkillBadge from "../components/SkillBadge.astro";
+import { getCollection } from "astro:content";
+
+const resumeEntries = await getCollection("resume");
+
+// Group by type
+const byType = (type: string) => resumeEntries.filter((e) => e.data.type === type).sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
+
+const meta = byType("meta")[0]?.data;
+const education = byType("education");
+const experience = byType("experience");
+const projects = byType("project");
+const skillsEntry = byType("skills")[0];
+const leadership = byType("leadership");
+const honors = byType("honor");
+
+// Skills parsing: highlights are "Category: item, item, ..."
+const skillGroups = (() => {
+  if (!skillsEntry?.data.highlights) return [];
+  return skillsEntry.data.highlights.map((line) => {
+    const [category, rest] = line.split(": ");
+    const items = rest ? rest.split(", ").map((s) => s.trim()) : [];
+    return { category: category.trim(), items };
+  });
+})();
+---
+
+<BaseLayout
+  title="Resume — Moe Ye Htet"
+  description="Resume of Moe Ye Htet — M.Sc. Automotive Software Engineering, TU Chemnitz. Experience, education, projects — web-optimized for recruiters, with PDF download."
+>
+  <div class="mx-auto max-w-6xl px-6 py-10 md:px-8 md:py-12">
+    <!-- Header — name, meta, primary CTA -->
+    <header class="flex flex-col gap-6 border-b border-neutral-100 pb-8 md:flex-row md:items-start md:justify-between">
+      <div>
+        <h1 class="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">Moe Ye Htet</h1>
+        <p class="mt-2 text-sm text-neutral-600">
+          M.Sc. Automotive Software Engineering — Technische Universität Chemnitz
+          <span class="text-neutral-300"> · </span>
+          <span class="text-neutral-500">{meta?.location ?? "Chemnitz, Germany"}</span>
+        </p>
+        <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+          <a href="mailto:moeyehtet96@gmail.com" class="text-teal-700 underline-offset-4 hover:underline">moeyehtet96@gmail.com</a>
+          <span class="hidden text-neutral-300 sm:inline">·</span>
+          <a href="https://linkedin.com/in/moeyehtet" target="_blank" rel="noopener noreferrer" class="text-teal-700 underline-offset-4 hover:underline">linkedin.com/in/moeyehtet</a>
+          <span class="hidden text-neutral-300 sm:inline">·</span>
+          <a href="tel:+4915201857288" class="text-neutral-600 hover:text-neutral-900">+49 1520 1857288</a>
+        </div>
+        <p class="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-600">
+          Target roles: <span class="font-medium text-neutral-900">Automotive Software Developer</span> · Embedded Software Engineer — AUTOSAR, CAN, RTOS, ISO 26262, C/C++.
+        </p>
+      </div>
+
+      <div class="flex shrink-0 flex-col gap-3 md:items-end">
+        <a
+          href="/resume.pdf"
+          download
+          class="inline-flex items-center justify-center gap-2 rounded-md bg-neutral-900 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-neutral-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
+          Download PDF
+        </a>
+      </div>
+    </header>
+
+    <div class="mt-8 grid gap-12 lg:grid-cols-[1.7fr_0.9fr]">
+      <!-- Left: Education · Experience · Projects -->
+      <div class="space-y-10">
+        <Section title="Education" id="education">
+          <div class="space-y-8">
+            {education.map((entry) => (
+              <Entry
+                title={entry.data.title}
+                organization={entry.data.organization}
+                location={entry.data.location}
+                startDate={entry.data.startDate}
+                endDate={entry.data.endDate}
+                highlights={entry.data.highlights}
+                tags={entry.data.tags}
+              />
+            ))}
+          </div>
+        </Section>
+
+        <Section title="Experience" id="experience">
+          <div class="space-y-10">
+            {experience.map((entry) => (
+              <Entry
+                title={entry.data.title}
+                organization={entry.data.organization}
+                location={entry.data.location}
+                startDate={entry.data.startDate}
+                endDate={entry.data.endDate}
+                highlights={entry.data.highlights}
+                tags={entry.data.tags}
+              />
+            ))}
+          </div>
+        </Section>
+
+        <Section title="Projects" id="projects">
+          <div class="space-y-8">
+            {projects.map((entry) => (
+              <Entry
+                title={entry.data.title}
+                organization={entry.data.organization}
+                location={entry.data.location}
+                startDate={entry.data.startDate}
+                endDate={entry.data.endDate}
+                highlights={entry.data.highlights}
+                tags={entry.data.tags}
+              />
+            ))}
+          </div>
+        </Section>
+      </div>
+
+      <!-- Right: Skills · Leadership · Honors -->
+      <div class="space-y-10">
+        <Section title="Skills" id="skills">
+          <div class="space-y-5">
+            {skillGroups.map((group) => (
+              <div>
+                <h3 class="text-xs font-semibold uppercase tracking-widest text-neutral-500">{group.category}</h3>
+                <div class="mt-2 flex flex-wrap gap-1.5">
+                  {group.items.map((item) => (
+                    <SkillBadge label={item} />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section title="Leadership" id="leadership">
+          <div class="space-y-6">
+            {leadership.map((entry) => (
+              <Entry
+                title={entry.data.title}
+                organization={entry.data.organization}
+                location={entry.data.location}
+                startDate={entry.data.startDate}
+                endDate={entry.data.endDate}
+                highlights={entry.data.highlights}
+              />
+            ))}
+          </div>
+        </Section>
+
+        <Section title="Honors" id="honors">
+          <div class="space-y-6">
+            {honors.map((entry) => (
+              <Entry
+                title={entry.data.title}
+                organization={entry.data.organization}
+                startDate={entry.data.startDate}
+                endDate={entry.data.endDate}
+                highlights={entry.data.highlights}
+              />
+            ))}
+          </div>
+        </Section>
+
+        <div class="rounded-lg border border-neutral-100 bg-neutral-50/50 p-5">
+          <h3 class="text-sm font-semibold text-neutral-900">Download</h3>
+          <p class="mt-1.5 text-sm leading-relaxed text-neutral-600">Download the PDF version for sharing.</p>
+          <a
+            href="/resume.pdf"
+            download
+            class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-md border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-900 transition hover:bg-neutral-50"
+          >
+            Download PDF
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
