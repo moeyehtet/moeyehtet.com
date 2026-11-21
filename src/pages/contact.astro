@@ -15,61 +15,94 @@ const location = meta?.location ?? "Chemnitz, Germany";
   description="Contact Moe Ye Htet — M.Sc. Automotive Software Engineering, Technische Universität Chemnitz. Email, LinkedIn, location."
 >
   <div class="mx-auto max-w-6xl px-6 py-10 md:px-8 md:py-12">
-    <div class="surface-card max-w-3xl p-6 md:p-8">
-      <h1 class="text-3xl font-semibold tracking-tight text-neutral-900">Contact</h1>
-      <p class="mt-3 text-base leading-relaxed text-neutral-600">
-        Please contact me directly via email or LinkedIn — I typically respond within one business day.
-      </p>
+    <div class="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+      <section class="surface-card h-full p-6 md:p-8" aria-labelledby="contact-heading">
+        <h1 id="contact-heading" class="text-3xl font-semibold tracking-tight text-neutral-900">Contact</h1>
+        <p class="mt-3 text-base leading-relaxed text-neutral-600">
+          Please contact me directly via email or LinkedIn — I typically respond within one business day.
+        </p>
 
-      <address class="mt-8 not-italic">
-        <div class="space-y-6">
-          <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
-            <span class="w-20 shrink-0 text-xs font-semibold uppercase tracking-widest text-neutral-500">Email</span>
-            <div class="flex items-center gap-2">
-              <a href={`mailto:${email}`} class="text-sm font-medium text-primary underline-offset-4 hover:underline">{email}</a>
-              <button
-                type="button"
-                id="copy-email"
-                data-email={email}
-                class="button-tonal px-3 py-1 text-xs"
-                aria-label="Copy email address"
-              >
-                <span id="copy-label">Copy</span>
-              </button>
+        <address class="mt-8 not-italic">
+          <div class="space-y-6">
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
+              <span class="w-20 shrink-0 text-xs font-semibold uppercase tracking-widest text-neutral-500">Email</span>
+              <div class="flex items-center gap-2">
+                <a href={`mailto:${email}`} class="text-sm font-medium text-primary underline-offset-4 hover:underline">{email}</a>
+                <button
+                  type="button"
+                  id="copy-email"
+                  data-email={email}
+                  class="button-tonal px-3 py-1 text-xs"
+                  aria-label="Copy email address"
+                >
+                  <span id="copy-label">Copy</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
+              <span class="w-20 shrink-0 text-xs font-semibold uppercase tracking-widest text-neutral-500">LinkedIn</span>
+              <a href={linkedin} target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-primary underline-offset-4 hover:underline">
+                linkedin.com/in/moeyehtet <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
+              <span class="w-20 shrink-0 text-xs font-semibold uppercase tracking-widest text-neutral-500">GitHub</span>
+              <a href="https://github.com/moeyehtet" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-primary underline-offset-4 hover:underline">
+                github.com/moeyehtet <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
+              <span class="w-20 shrink-0 text-xs font-semibold uppercase tracking-widest text-neutral-500">Location</span>
+              <span class="text-sm text-neutral-700">{location}</span>
             </div>
           </div>
+        </address>
 
-          <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
-            <span class="w-20 shrink-0 text-xs font-semibold uppercase tracking-widest text-neutral-500">LinkedIn</span>
-            <a href={linkedin} target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-primary underline-offset-4 hover:underline">
-              linkedin.com/in/moeyehtet <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-
-          <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
-            <span class="w-20 shrink-0 text-xs font-semibold uppercase tracking-widest text-neutral-500">GitHub</span>
-            <a href="https://github.com/moeyehtet" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-primary underline-offset-4 hover:underline">
-              github.com/moeyehtet <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-
-          <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
-            <span class="w-20 shrink-0 text-xs font-semibold uppercase tracking-widest text-neutral-500">Location</span>
-            <span class="text-sm text-neutral-700">{location}</span>
-          </div>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <a href={`mailto:${email}`} class="button-primary">
+            Send email
+          </a>
+          <a href="/resume.pdf" download class="button-secondary">
+            Download Resume
+          </a>
         </div>
-      </address>
+      </section>
 
-      <div class="mt-10 flex flex-wrap gap-3">
-        <a href="mailto:moeyehtet96@gmail.com" class="button-primary">
-          Send email
-        </a>
-        <a href="/resume.pdf" download class="button-secondary">
-          Download Resume
-        </a>
-      </div>
+      <aside class="surface-card flex h-full flex-col bg-surface-container p-6 md:p-8" aria-labelledby="contribution-heading">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-widest text-primary">Areas of focus</p>
+          <h2 id="contribution-heading" class="mt-2 text-xl font-semibold tracking-tight text-neutral-900">
+            What I can contribute
+          </h2>
+          <p class="mt-3 text-sm leading-relaxed text-neutral-600">
+            Engineering skills and coursework relevant to automotive and embedded software teams.
+          </p>
+        </div>
 
+        <ul class="mt-6 space-y-5">
+          <li>
+            <h3 class="text-sm font-semibold text-neutral-900">Embedded software</h3>
+            <p class="mt-1 text-sm leading-relaxed text-neutral-600">C/C++ development, including microcontroller based project work.</p>
+          </li>
+          <li>
+            <h3 class="text-sm font-semibold text-neutral-900">Automotive systems</h3>
+            <p class="mt-1 text-sm leading-relaxed text-neutral-600">M.Sc. studies in automotive software and embedded systems.</p>
+          </li>
+          <li>
+            <h3 class="text-sm font-semibold text-neutral-900">Safety engineering</h3>
+            <p class="mt-1 text-sm leading-relaxed text-neutral-600">ISO 26262 as part of current automotive software studies.</p>
+          </li>
+        </ul>
 
+        <div class="mt-auto border-t border-outline pt-5">
+          <p class="text-xs font-semibold uppercase tracking-widest text-neutral-500">Currently</p>
+          <p class="mt-2 text-sm font-medium text-neutral-900">M.Sc. Automotive Software Engineering</p>
+          <p class="mt-1 text-sm text-neutral-600">Technische Universität Chemnitz · {location}</p>
+        </div>
+      </aside>
     </div>
   </div>
 
