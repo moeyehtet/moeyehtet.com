@@ -55,17 +55,4 @@ const projects = defineCollection({
   }),
 });
 
-// Blog — technical writing on automotive/embedded topics
-const blog = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog" }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    pubDate: z.coerce.date().optional(),
-    updatedDate: z.coerce.date().optional(),
-    tags: z.array(z.string()).optional(),
-    draft: z.boolean().optional(),
-  }),
-});
-
-export const collections = { resume, projects, blog };
+export const collections = { resume, projects };
