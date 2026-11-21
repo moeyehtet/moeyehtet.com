@@ -1,18 +1,17 @@
 @import "tailwindcss";
 
-/* Design tokens
-   Restrained palette: neutral base + 1 accent (sparingly)
-   Accent: teal-700 #0F766E — 7.1:1 on white (WCAG AA), 4.5:1 on neutral-50
-   Alternatives considered (see commit notes):
-     - Automotive blue #1E3A5F (8.2:1)
-     - Amber #92400E (6.8:1) — reserved for future warning/attention
-   Typography: IBM Plex Sans (engineering/technical feel) — loaded via <link> in BaseLayout for performance
-*/
+/* Material-inspired tonal surfaces using the site's established teal accent. */
 @theme {
   --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
-  --color-accent: #0f766e;
-  --color-accent-hover: #115e59;
-  --color-accent-soft: #f0fdfa;
+  --color-primary: #0f766e;
+  --color-primary-hover: #115e59;
+  --color-primary-container: #d7eee9;
+  --color-primary-container-hover: #c9e5de;
+  --color-on-primary-container: #064b45;
+  --color-surface: #f7f9f8;
+  --color-surface-container: #edf3f1;
+  --color-outline: #d6e1dd;
+  --color-outline-strong: #b9c9c4;
 }
 
 /* Global base — whitespace over borders, type scale with generous leading */
@@ -25,14 +24,13 @@
   }
 
   body {
-    @apply bg-white text-neutral-900 antialiased;
+    @apply bg-surface text-neutral-900 antialiased;
     line-height: 1.65;
-    letter-spacing: -0.01em;
   }
 
   /* Subtle focus ring — WCAG AA visible */
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-teal-700;
+    @apply outline-2 outline-offset-2 outline-primary;
   }
 
   /* Minimal motion — respect prefers-reduced-motion */
@@ -46,12 +44,33 @@
   }
 }
 
-/* Subtle technical motif — faint CAN-bus grid, CSS-only */
+@layer components {
+  .surface-card {
+    @apply rounded-2xl border border-outline bg-white shadow-sm;
+  }
+
+  .surface-card-interactive {
+    @apply rounded-2xl border border-outline bg-white shadow-sm transition duration-200 hover:border-outline-strong hover:shadow-md;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-white shadow-sm transition duration-200 hover:bg-primary-hover hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary;
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-outline bg-white px-5 py-2.5 text-sm font-medium text-neutral-900 shadow-sm transition duration-200 hover:border-outline-strong hover:bg-surface hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary;
+  }
+
+  .button-tonal {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary-container px-4 py-2 text-sm font-medium text-on-primary-container transition duration-200 hover:bg-primary-container-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary;
+  }
+}
+
 @layer utilities {
   .motif-grid {
     background-image:
-      linear-gradient(to right, rgba(15, 118, 110, 0.14) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(15, 118, 110, 0.14) 1px, transparent 1px);
+      linear-gradient(to right, rgba(15, 118, 110, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 118, 110, 0.1) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 

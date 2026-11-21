@@ -1,5 +1,12 @@
 ---
-
+const currentPath = Astro.url.pathname.replace(/\/+$/, "") || "/";
+const isCurrentPath = (path: string) => currentPath === path;
+const desktopLinkClass = "inline-flex items-center rounded-full px-4 py-2 text-sm font-medium transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
+const desktopActiveLinkClass = `${desktopLinkClass} bg-primary-container text-on-primary-container`;
+const desktopInactiveLinkClass = `${desktopLinkClass} text-neutral-600 hover:bg-surface-container hover:text-neutral-900`;
+const mobileLinkClass = "block rounded-xl px-4 py-3 text-sm font-medium transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
+const mobileActiveLinkClass = `${mobileLinkClass} bg-primary-container text-on-primary-container`;
+const mobileInactiveLinkClass = `${mobileLinkClass} text-neutral-700 hover:bg-surface-container`;
 ---
 
 <nav
@@ -8,7 +15,7 @@
 >
   <a
     href="/"
-    class="text-sm font-semibold tracking-tight text-neutral-900 transition hover:text-neutral-600"
+    class="text-sm font-semibold tracking-tight text-neutral-900 transition hover:text-primary"
     aria-label="Moe Ye Htet — home"
   >
     Moe Ye Htet
@@ -17,14 +24,14 @@
 
   <!-- Desktop links -->
   <div class="hidden items-center gap-8 md:flex">
-    <a href="/" class="text-sm text-neutral-600 transition hover:text-neutral-900">Home</a>
-    <a href="/resume" class="text-sm text-neutral-600 transition hover:text-neutral-900">Resume</a>
-    <a href="/projects" class="text-sm text-neutral-600 transition hover:text-neutral-900">Projects</a>
-    <a href="/contact" class="text-sm text-neutral-600 transition hover:text-neutral-900">Contact</a>
+    <a href="/" aria-current={isCurrentPath("/") ? "page" : undefined} class={isCurrentPath("/") ? desktopActiveLinkClass : desktopInactiveLinkClass}>Home</a>
+    <a href="/resume" aria-current={isCurrentPath("/resume") ? "page" : undefined} class={isCurrentPath("/resume") ? desktopActiveLinkClass : desktopInactiveLinkClass}>Resume</a>
+    <a href="/projects" aria-current={isCurrentPath("/projects") ? "page" : undefined} class={isCurrentPath("/projects") ? desktopActiveLinkClass : desktopInactiveLinkClass}>Projects</a>
+    <a href="/contact" aria-current={isCurrentPath("/contact") ? "page" : undefined} class={isCurrentPath("/contact") ? desktopActiveLinkClass : desktopInactiveLinkClass}>Contact</a>
     <a
       href="/resume.pdf"
       download
-      class="inline-flex items-center rounded-md bg-neutral-900 px-3.5 py-1.5 text-sm font-medium text-white transition hover:bg-neutral-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900"
+      class="button-primary px-4 py-2"
     >
       Download Resume
     </a>
@@ -34,7 +41,7 @@
   <button
     type="button"
     id="nav-toggle"
-    class="inline-flex items-center justify-center rounded-md p-2 text-neutral-600 transition hover:bg-neutral-50 hover:text-neutral-900 md:hidden"
+    class="inline-flex items-center justify-center rounded-full p-2 text-neutral-600 transition hover:bg-surface-container hover:text-neutral-900 md:hidden"
     aria-expanded="false"
     aria-controls="nav-mobile"
     aria-label="Toggle navigation"
@@ -72,24 +79,24 @@
 <!-- Mobile panel -->
 <div
   id="nav-mobile"
-  class="hidden border-t border-neutral-100 md:hidden"
+  class="hidden border-t border-outline/80 bg-surface md:hidden"
   aria-hidden="true"
 >
-  <div class="mx-auto flex max-w-6xl flex-col gap-1 px-6 py-4">
-    <a href="/" class="rounded-md px-3 py-2 text-sm text-neutral-700 hover:bg-neutral-50">Home</a>
-    <a href="/resume" class="rounded-md px-3 py-2 text-sm text-neutral-700 hover:bg-neutral-50"
+  <div class="mx-auto flex max-w-6xl flex-col gap-1.5 px-6 py-4">
+    <a href="/" aria-current={isCurrentPath("/") ? "page" : undefined} class={isCurrentPath("/") ? mobileActiveLinkClass : mobileInactiveLinkClass}>Home</a>
+    <a href="/resume" aria-current={isCurrentPath("/resume") ? "page" : undefined} class={isCurrentPath("/resume") ? mobileActiveLinkClass : mobileInactiveLinkClass}
       >Resume</a
     >
-    <a href="/projects" class="rounded-md px-3 py-2 text-sm text-neutral-700 hover:bg-neutral-50"
+    <a href="/projects" aria-current={isCurrentPath("/projects") ? "page" : undefined} class={isCurrentPath("/projects") ? mobileActiveLinkClass : mobileInactiveLinkClass}
       >Projects</a
     >
-    <a href="/contact" class="rounded-md px-3 py-2 text-sm text-neutral-700 hover:bg-neutral-50"
+    <a href="/contact" aria-current={isCurrentPath("/contact") ? "page" : undefined} class={isCurrentPath("/contact") ? mobileActiveLinkClass : mobileInactiveLinkClass}
       >Contact</a
     >
     <a
       href="/resume.pdf"
       download
-      class="mt-2 inline-flex items-center justify-center rounded-md bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-neutral-700"
+      class="button-primary mt-2"
       >Download Resume</a
     >
   </div>

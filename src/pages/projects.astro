@@ -41,12 +41,12 @@ const projects = (await getCollection("projects", ({ data }) => !data.draft))
         ))}
       </div>
       {projects.length === 0 && (
-        <p class="mt-8 text-sm text-neutral-600">
-          No projects are listed yet. <a href="/contact" class="font-medium text-teal-700 underline-offset-4 hover:underline">Get in touch</a> to learn more about my work.
+        <p class="surface-card mt-8 p-6 text-sm text-neutral-600">
+          No projects are listed yet. <a href="/contact" class="font-medium text-primary underline-offset-4 hover:underline">Get in touch</a> to learn more about my work.
         </p>
       )}
       <p class="mt-8 text-sm text-neutral-500">
-        <a href="/resume#projects" class="font-medium text-teal-700 underline-offset-4 hover:underline">View project details on my resume →</a>
+        <a href="/resume#projects" class="font-medium text-primary underline-offset-4 hover:underline">View project details on my resume →</a>
       </p>
     </section>
   </div>

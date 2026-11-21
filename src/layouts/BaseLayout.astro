@@ -37,14 +37,14 @@ const canonicalURL = Astro.url;
 
     <title>{title}</title>
   </head>
-  <body class="flex min-h-screen flex-col">
+  <body class="flex min-h-screen flex-col bg-surface">
     <a
       href="#main-content"
-      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-neutral-900 focus:px-4 focus:py-2 focus:text-sm focus:text-white"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-primary focus:px-5 focus:py-2.5 focus:text-sm focus:font-medium focus:text-white"
       >Skip to content</a
     >
 
-    <header class="sticky top-0 z-40 border-b border-neutral-100 bg-white/80 backdrop-blur-sm">
+    <header class="sticky top-0 z-40 border-b border-outline/80 bg-surface/90 shadow-sm backdrop-blur-md">
       <Nav />
     </header>
 
