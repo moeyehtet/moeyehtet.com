@@ -5,8 +5,7 @@
 [build.environment]
   NODE_VERSION = "22.23.4"
 
-# Redirects — Astro handles trailing slashes, but force canonical trailing slash for static
-# (Netlify pretty URLs already do this; kept explicit for clarity)
+# Redirects — enforce canonical trailing slashes for static routes on Netlify
 [[redirects]]
   from = "/resume"
   to = "/resume/"
