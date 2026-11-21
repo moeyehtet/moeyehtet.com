@@ -13,7 +13,7 @@ const {
   description = "Master's student in Automotive Software Engineering — targeting Automotive Software Developer & Embedded Software Engineer roles. CAN, AUTOSAR, RTOS, ISO 26262.",
 } = Astro.props;
 
-const canonicalURL = Astro.url;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
