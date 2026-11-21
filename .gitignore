@@ -15,7 +15,11 @@ pnpm-debug.log*
 
 # environment variables
 .env
-.env.production
+.env.*
+!.env.example
+
+# Netlify local state
+.netlify/
 
 # macOS-specific files
 .DS_Store
