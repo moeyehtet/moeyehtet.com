@@ -34,8 +34,10 @@ const projects = defineCollection({
     title: z.string(),
     description: z.string().optional(),
     organization: z.string().optional(),
+    location: z.string().optional(),
     startDate: z.string().optional(),
     endDate: z.string().optional(),
+    order: z.number().optional(),
     tags: z.array(z.string()).optional(),
     highlights: z.array(z.string()).optional(),
     // Case-study fields
