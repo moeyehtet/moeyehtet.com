@@ -27,6 +27,20 @@ const canonicalURL = Astro.url;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
 
+    <script is:inline>
+      (() => {
+        let preference = null;
+        try {
+          preference = localStorage.getItem("theme");
+        } catch {}
+        const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = preference === "light" || preference === "dark"
+          ? preference
+          : systemPrefersDark ? "dark" : "light";
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+
     <!-- IBM Plex Sans — engineering/technical feel, subset latin, display=swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
